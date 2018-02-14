@@ -1,6 +1,4 @@
 var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = {
@@ -45,15 +43,7 @@ var config = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("main.css"),
-        // 提取模板，并保存入口 html 文件
-        new HtmlWebpackPlugin({
-            alwaysWriteToDisk: true,
-            filename: '../index.html',
-            template: './index.ejs',
-            inject: false
-        }),
-        new HtmlWebpackHarddiskPlugin()
+        new ExtractTextPlugin("main.css")
     ]
 };
 
